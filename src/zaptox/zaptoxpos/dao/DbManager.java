@@ -171,7 +171,7 @@ public class DbManager implements DbManagerInterface {
     @Override
     public User userAuthentication(String username, String password) {
         User user = null;
-        String query = "SELECT * FROM USER WHERE user_name=? AND PASSWORD=?;";
+        String query = "SELECT * FROM USER WHERE user_name=? AND PASSWORD=?";
         try {
             PreparedStatement ps = conn.prepareStatement(query);
             ps.setString(1, username);
@@ -190,7 +190,7 @@ public class DbManager implements DbManagerInterface {
 
                 int active = rs.getInt("active");
 
-                User u = new User(user_id, user_type_id, user_name, passsword, name, address, contact_number, active);
+                user= new User(user_id, user_type_id, user_name, passsword, name, address, contact_number, active);
 
             }
 

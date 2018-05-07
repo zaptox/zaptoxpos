@@ -10,6 +10,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
+import zaptox.zaptoxpos.db.DbConnection;
 import zaptox.zaptoxpos.frames.LoginPage;
 
 /**
@@ -25,7 +26,7 @@ public class ZaptoxPOS {
         // TODO code application logic here
                 
     
-        
+        DbConnection.load();
          new LoginPage().setVisible(true);
 
       
