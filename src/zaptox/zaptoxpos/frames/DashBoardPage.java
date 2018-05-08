@@ -36,7 +36,7 @@ public class DashBoardPage extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        jButtonViewUser = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
@@ -105,11 +105,16 @@ public class DashBoardPage extends javax.swing.JFrame {
         jButton1.setText("jButton1");
         jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 220, 430, 120));
 
-        jButton2.setBackground(new java.awt.Color(0, 102, 255));
-        jButton2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setText("jButton1");
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 220, 430, 120));
+        jButtonViewUser.setBackground(new java.awt.Color(0, 102, 255));
+        jButtonViewUser.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jButtonViewUser.setForeground(new java.awt.Color(255, 255, 255));
+        jButtonViewUser.setText("View User");
+        jButtonViewUser.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonViewUserActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButtonViewUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 220, 430, 120));
 
         jButton3.setBackground(new java.awt.Color(0, 102, 255));
         jButton3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -206,6 +211,12 @@ public class DashBoardPage extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton8ActionPerformed
 
+    private void jButtonViewUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonViewUserActionPerformed
+        // TODO add your handling code here:
+        new UserPage().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jButtonViewUserActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -243,7 +254,6 @@ public class DashBoardPage extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
@@ -251,6 +261,7 @@ public class DashBoardPage extends javax.swing.JFrame {
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
+    private javax.swing.JButton jButtonViewUser;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabelExit;
     private javax.swing.JLabel jLabelHeaderRow;

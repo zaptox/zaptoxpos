@@ -12,9 +12,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
-import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import zaptox.zaptoxpos.beans.BorrowRecords;
 import zaptox.zaptoxpos.beans.Branch;
 import zaptox.zaptoxpos.beans.Category;
@@ -314,10 +311,7 @@ String query = "INSERT INTO `user_type` (`user_type`) VALUES (?);  ";
 
     }
 
-    @Override
-    public ArrayList<Product> getAllProducts() {
-
-    }
+    
 
     @Override
     public ArrayList<Product> getAllProductsSearch(String search) {
@@ -543,5 +537,12 @@ String query = "INSERT INTO `user_type` (`user_type`) VALUES (?);  ";
     public int insertReturnProduct(ReturnProduct b) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
+    @Override
+    public ArrayList<Product> getAllProducts() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    
+    
 
 }
