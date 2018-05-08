@@ -37,7 +37,7 @@ public class DashBoardPage extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jButtonViewUser = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        jButtonViewUserType = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
@@ -116,16 +116,16 @@ public class DashBoardPage extends javax.swing.JFrame {
         });
         jPanel1.add(jButtonViewUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 220, 430, 120));
 
-        jButton3.setBackground(new java.awt.Color(0, 102, 255));
-        jButton3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(255, 255, 255));
-        jButton3.setText("jButton1");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        jButtonViewUserType.setBackground(new java.awt.Color(0, 102, 255));
+        jButtonViewUserType.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jButtonViewUserType.setForeground(new java.awt.Color(255, 255, 255));
+        jButtonViewUserType.setText("View UserType");
+        jButtonViewUserType.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                jButtonViewUserTypeActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 220, 430, 120));
+        jPanel1.add(jButtonViewUserType, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 220, 430, 120));
 
         jButton4.setBackground(new java.awt.Color(0, 102, 255));
         jButton4.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -199,9 +199,11 @@ public class DashBoardPage extends javax.swing.JFrame {
         this.jLabelExit.setBackground(new Color(0, 102, 255));
     }//GEN-LAST:event_jLabelExitMouseExited
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void jButtonViewUserTypeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonViewUserTypeActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
+        new UserTypePage().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jButtonViewUserTypeActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
@@ -254,7 +256,6 @@ public class DashBoardPage extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
@@ -262,6 +263,7 @@ public class DashBoardPage extends javax.swing.JFrame {
     private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
     private javax.swing.JButton jButtonViewUser;
+    private javax.swing.JButton jButtonViewUserType;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabelExit;
     private javax.swing.JLabel jLabelHeaderRow;

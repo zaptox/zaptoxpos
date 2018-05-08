@@ -131,11 +131,11 @@ public class UserTypePage extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButtonDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 450, 290, 70));
-        jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, 370, -1));
+        jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, 370, -1));
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel5.setText("USER TYPE*");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 210, -1));
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 210, -1));
 
         jButtonBack.setBackground(new java.awt.Color(0, 102, 255));
         jButtonBack.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -231,7 +231,7 @@ public class UserTypePage extends javax.swing.JFrame {
                 jTextFieldUseTypeKeyPressed(evt);
             }
         });
-        jPanel1.add(jTextFieldUseType, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, 370, 20));
+        jPanel1.add(jTextFieldUseType, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, 370, 20));
 
         jButtonUpdate.setBackground(new java.awt.Color(0, 102, 255));
         jButtonUpdate.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N

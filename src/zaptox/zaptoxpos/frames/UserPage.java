@@ -7,8 +7,15 @@ package zaptox.zaptoxpos.frames;
 
 import java.awt.Color;
 import java.awt.Font;
+import java.util.ArrayList;
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.JFrame;
+import javax.swing.table.DefaultTableModel;
 import javax.swing.table.JTableHeader;
+import zaptox.zaptoxpos.beans.User;
+import zaptox.zaptoxpos.beans.UserType;
+import zaptox.zaptoxpos.dao.DbManager;
+import zaptox.zaptoxpos.dao.DbManagerInterface;
 
 /**
  *
@@ -19,12 +26,30 @@ public class UserPage extends javax.swing.JFrame {
     /**
      * Creates new form DashBoardPage
      */
+    DefaultTableModel tableModelUser;
+    DefaultComboBoxModel comboBoxModelUserType;
+    public ArrayList<UserType> user_types_list;
+    public ArrayList<User> users_list;
+    DbManagerInterface dbManager;
+
     public UserPage() {
         initComponents();
-          JTableHeader header = this.jTableUser.getTableHeader();
-        header.setBackground(new Color(0,102,255));
-        header.setForeground(new Color(255, 255,255));
+        JTableHeader header = this.jTableUser.getTableHeader();
+        header.setBackground(new Color(0, 102, 255));
+        header.setForeground(new Color(255, 255, 255));
         header.setFont(new Font("SansSerif", Font.BOLD, 16));
+
+        dbManager = new DbManager();
+        user_types_list=dbManager.getAllUsersType();
+        tableModelUser = (DefaultTableModel) this.jTableUser.getModel();
+        comboBoxModelUserType = (DefaultComboBoxModel) this.jComboBoxUserType.getModel();
+        this.jComboBoxUserType.setVisible(true);
+
+        //showInTable();
+        this.jButtonUpdate.setVisible(false);
+        this.jButtonDelete.setVisible(false);
+        showInUserTypesComboBox();
+
     }
 
     /**
@@ -416,8 +441,8 @@ public class UserPage extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabelExitMouseExited
 
     private void jButtonDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDeleteActionPerformed
-      //  int users_id = users_list.get(this.jTableUser.getSelectedRow()).getUser_id();
-      //  int i = dbManager.removeUser(new User(users_id, 0, 0, 0, 0, 0, "", "", "", "", "", "", "", ""));
+        //  int users_id = users_list.get(this.jTableUser.getSelectedRow()).getUser_id();
+        //  int i = dbManager.removeUser(new User(users_id, 0, 0, 0, 0, 0, "", "", "", "", "", "", "", ""));
 
 //        if (i != 0) {
 //            JOptionPane.showMessageDialog(this, "Deleted Sucessfully");
@@ -743,6 +768,16 @@ public class UserPage extends javax.swing.JFrame {
             }
         });
     }
+
+    public void showInUserTypesComboBox() {
+        user_types_list = dbManager.getAllUsersType();
+        for (UserType userType : user_types_list) {
+
+            this.jComboBoxUserType.addItem("" + userType.getUser_type());
+
+        }
+    }
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonBack;
