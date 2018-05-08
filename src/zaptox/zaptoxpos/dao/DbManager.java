@@ -227,27 +227,96 @@ String query = "SELECT * FROM user_type WHERE active=1;";
 
     @Override
     public UserType getUserType(int user_type_id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+
+        UserType usertype = null;
+        String query = "SELECT * FROM user_type WHERE user_type_id=?;";
+        try {
+            PreparedStatement ps = conn.prepareStatement(query);
+            ps.setInt(1, user_type_id);
+            ResultSet rs = ps.executeQuery();
+
+            while (rs.next()) {
+                int user_catid = rs.getInt("user_catid");
+                String user_type = rs.getString("user_type");
+                int active = rs.getInt("active");
+       
+                usertype = new UserType(user_catid, user_type, active);
+
+            }
+
+        } catch (Exception ex) {
+            System.out.println("" + ex.getMessage());
+        }
+        return usertype;
+
     }
 
     @Override
     public int updateUserType(UserType userType) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+     String query = "UPDATE user_type SET `user_type` = ? WHERE `user_type_id` = ?;  ";
+        int i = 0;
+        try {
+            PreparedStatement ps = conn.prepareStatement(query);
+            ps.setString(1, userType.getUser_type());
+            ps.setInt(2, userType.getUser_type_id());
+
+            Statement s = conn.createStatement();
+            i = ps.executeUpdate();
+
+        } catch (Exception ex) {
+            System.out.println("" + ex.getMessage());
+        }
+
+        return i;
+
     }
 
     @Override
     public int deleteUserType(UserType userType) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
+        String query = "UPDATE user_type SET `active` = ? WHERE `user_type_id` = ?; ";
+        int i = 0;
+        try {
+            PreparedStatement ps = conn.prepareStatement(query);
+            ps.setInt(1, 0);
+            ps.setInt(2, userType.getUser_type_id());
+
+            Statement s = conn.createStatement();
+            i = ps.executeUpdate();
+
+        } catch (Exception ex) {
+            System.out.println("" + ex.getMessage());
+        }
+
+        return i;
+
+        
     }
 
     @Override
     public int insertUserType(UserType userType) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+String query = "INSERT INTO `user_type` (`user_type`) VALUES (?);  ";
+
+        int i = 0;
+        try {
+            PreparedStatement ps = conn.prepareStatement(query);
+            ps.setString(1, userType.getUser_type());
+
+            Statement s = conn.createStatement();
+            i = ps.executeUpdate();
+
+        } catch (Exception ex) {
+            System.out.println("" + ex.getMessage());
+        }
+
+        return i;
+
+
     }
 
     @Override
     public ArrayList<Product> getAllProducts() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+
     }
 
     @Override
