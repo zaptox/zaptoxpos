@@ -19,7 +19,8 @@ private String address;
 private String contact_number;
 private int active;
 
-    public User(int user_id, int user_type_id, String user_name, String passsword, String name, String address, String contact_number, int active) {
+    public User(int user_id, int user_type_id, String user_name, 
+            String passsword, String name, String address, String contact_number, int active) {
         this.user_id = user_id;
         this.user_type_id = user_type_id;
         this.user_name = user_name;

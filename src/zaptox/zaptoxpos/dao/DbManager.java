@@ -226,14 +226,14 @@ String query = "SELECT * FROM user_type WHERE active=1;";
     public UserType getUserType(int user_type_id) {
 
         UserType usertype = null;
-        String query = "SELECT * FROM user_type WHERE user_type_id=?;";
+        String query = "SELECT * FROM user_type WHERE user_type_id=?";
         try {
             PreparedStatement ps = conn.prepareStatement(query);
             ps.setInt(1, user_type_id);
             ResultSet rs = ps.executeQuery();
 
             while (rs.next()) {
-                int user_catid = rs.getInt("user_catid");
+                int user_catid = rs.getInt("user_type_id");
                 String user_type = rs.getString("user_type");
                 int active = rs.getInt("active");
        

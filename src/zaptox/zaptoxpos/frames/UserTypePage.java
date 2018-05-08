@@ -200,8 +200,7 @@ public class UserTypePage extends javax.swing.JFrame {
         jTableUserType.setToolTipText("Products");
         jTableUserType.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jTableUserType.setGridColor(new java.awt.Color(0, 102, 255));
-        jTableUserType.setSelectionBackground(new java.awt.Color(0, 0, 51));
-        jTableUserType.setSelectionForeground(new java.awt.Color(0, 204, 0));
+        jTableUserType.setSelectionBackground(new java.awt.Color(0, 102, 255));
         jTableUserType.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jTableUserTypeMouseClicked(evt);
