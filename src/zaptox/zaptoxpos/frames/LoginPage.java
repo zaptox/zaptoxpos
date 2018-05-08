@@ -5,7 +5,6 @@
  */
 package zaptox.zaptoxpos.frames;
 
-
 import com.sun.glass.events.KeyEvent;
 import java.applet.AudioClip;
 import java.awt.Color;
@@ -22,7 +21,7 @@ import javax.swing.border.LineBorder;
 import zaptox.zaptoxpos.beans.User;
 import zaptox.zaptoxpos.dao.DbManager;
 import zaptox.zaptoxpos.dao.DbManagerInterface;
-import zaptox.zaptoxpos.util.PlayAideo;
+import zaptox.zaptoxpos.util.playAudio;
 //import zaptox.zaptoxpos.util.AideoClips;
 
 /**
@@ -30,13 +29,15 @@ import zaptox.zaptoxpos.util.PlayAideo;
  * @author Vksoni
  */
 public class LoginPage extends javax.swing.JFrame {
-DbManagerInterface dbManager;
+
+    DbManagerInterface dbManager;
+
     /**
      * Creates new form LoginPage
      */
     public LoginPage() {
         initComponents();
-        dbManager=new DbManager();
+        dbManager = new DbManager();
 
     }
 
@@ -211,7 +212,8 @@ DbManagerInterface dbManager;
             this.jTextFieldUsername.setText("");
             this.jTextFieldUsername.setForeground(Color.black);
         }
-         if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+        try{
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
             if (!(this.jTextFieldUsername.getText().equals("Enter Username")
                     || this.jPasswordFieldPassword.getText().equals("@Enter_Password") || this.jTextFieldUsername.getText().equals("")
                     || this.jPasswordFieldPassword.getText().equals(""))) {
@@ -219,37 +221,40 @@ DbManagerInterface dbManager;
                 if (this.jTextFieldUsername.getText().matches("^([A-Za-z_][A-Za-z0-9_]*)$")) {
                     User user = dbManager.userAuthentication(this.jTextFieldUsername.getText(), this.jPasswordFieldPassword.getText());
                     if (user == null) {
-                        JOptionPane.showMessageDialog(this, "Invalid Password or username!");
+
+                        //JOptionPane.showMessageDialog(this, "Invalid Password or usernames!");
+                        JOptionPane.showMessageDialog(this, "Invalid Username or Password", "Error", JOptionPane.ERROR_MESSAGE);
                         this.jTextFieldUsername.setText("Enter Username");
                         this.jPasswordFieldPassword.setText("@Enter_Password");
-                    }
-                    if ((user.getUser_name().equals(this.jTextFieldUsername.getText()))
+                    } else if ((user.getUser_name().equals(this.jTextFieldUsername.getText()))
                             && (user.getPasssword().equals(this.jPasswordFieldPassword.getText()))) {
                         this.jTextFieldUsername.setText("");
                         this.jPasswordFieldPassword.setText("@Enter_Password");
+
                         new DashBoardPage().setVisible(true);
+                        new playAudio().playSuccessSound();
                         this.dispose();
+
                     }
                 } else {
+                     new playAudio().playErrorSound();
                     JOptionPane.showMessageDialog(this, "Invalid Username", "Error", JOptionPane.ERROR_MESSAGE);
-                    new PlayAideo().playErrorSound();
+                   
 
                 }
 
 //     
             } else {
-                new PlayAideo().playErrorSound();
+                new playAudio().playErrorSound();
                 JOptionPane.showMessageDialog(this, "Please type Username & Password", "Incorrect password or username", JOptionPane.ERROR_MESSAGE);
 
             }
 
+        }
 
         }
-       
-        
-        
-        
-
+        catch(Exception e){
+        }
     }//GEN-LAST:event_jTextFieldUsernameKeyPressed
 
     private void jPasswordFieldPasswordMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPasswordFieldPasswordMouseClicked
@@ -258,8 +263,8 @@ DbManagerInterface dbManager;
             this.jPasswordFieldPassword.setForeground(Color.black);
 
         }
-        
-        
+
+
     }//GEN-LAST:event_jPasswordFieldPasswordMouseClicked
 
     private void jPasswordFieldPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordFieldPasswordActionPerformed
@@ -272,8 +277,52 @@ DbManagerInterface dbManager;
             this.jPasswordFieldPassword.setForeground(Color.black);
 
         }
-        
-        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+        try {
+            if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+                if (!(this.jTextFieldUsername.getText().equals("Enter Username")
+                        || this.jPasswordFieldPassword.getText().equals("@Enter_Password") || this.jTextFieldUsername.getText().equals("")
+                        || this.jPasswordFieldPassword.getText().equals(""))) {
+
+                    if (this.jTextFieldUsername.getText().matches("^([A-Za-z_][A-Za-z0-9_]*)$")) {
+                        User user = dbManager.userAuthentication(this.jTextFieldUsername.getText(), this.jPasswordFieldPassword.getText());
+                        if (user == null) {
+                             new playAudio().playErrorSound();
+                            JOptionPane.showMessageDialog(this, "Invalid Username or Password", "Error", JOptionPane.ERROR_MESSAGE);
+                            this.jTextFieldUsername.setText("Enter Username");
+                            this.jPasswordFieldPassword.setText("@Enter_Password");
+                        }
+                        if ((user.getUser_name().equals(this.jTextFieldUsername.getText()))
+                                && (user.getPasssword().equals(this.jPasswordFieldPassword.getText()))) {
+                            this.jTextFieldUsername.setText("");
+                            this.jPasswordFieldPassword.setText("@Enter_Password");
+                            new DashBoardPage().setVisible(true);
+                            new playAudio().playSuccessSound();
+                            this.dispose();
+                        }
+                    } else {
+                        new playAudio().playErrorSound();
+                        JOptionPane.showMessageDialog(this, "Invalid Username", "Error", JOptionPane.ERROR_MESSAGE);
+                        
+
+                    }
+
+//     
+                } else {
+                    new playAudio().playErrorSound();
+                    JOptionPane.showMessageDialog(this, "Please type Username & Password", "Error", JOptionPane.ERROR_MESSAGE);
+
+                }
+
+            }
+
+        } catch (Exception e) {
+            //JOptionPane.showMessageDialog(this, "Problem", "", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_jPasswordFieldPasswordKeyPressed
+
+    private void jButtonLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonLoginActionPerformed
+
+        try {
             if (!(this.jTextFieldUsername.getText().equals("Enter Username")
                     || this.jPasswordFieldPassword.getText().equals("@Enter_Password") || this.jTextFieldUsername.getText().equals("")
                     || this.jPasswordFieldPassword.getText().equals(""))) {
@@ -281,73 +330,42 @@ DbManagerInterface dbManager;
                 if (this.jTextFieldUsername.getText().matches("^([A-Za-z_][A-Za-z0-9_]*)$")) {
                     User user = dbManager.userAuthentication(this.jTextFieldUsername.getText(), this.jPasswordFieldPassword.getText());
                     if (user == null) {
-                        JOptionPane.showMessageDialog(this, "Invalid Password or username!");
+                            new playAudio().playErrorSound();
+                        JOptionPane.showMessageDialog(this, "Invalid Username or Password", "Error", JOptionPane.ERROR_MESSAGE);
+
                         this.jTextFieldUsername.setText("Enter Username");
                         this.jPasswordFieldPassword.setText("@Enter_Password");
+
+                        //JOptionPane.showMessageDialog(this, "Done");
                     }
+                    // JOptionPane.showMessageDialog(this, "Problem");
+
                     if ((user.getUser_name().equals(this.jTextFieldUsername.getText()))
                             && (user.getPasssword().equals(this.jPasswordFieldPassword.getText()))) {
                         this.jTextFieldUsername.setText("");
                         this.jPasswordFieldPassword.setText("@Enter_Password");
+                        new playAudio().playSuccessSound();
                         new DashBoardPage().setVisible(true);
+
                         this.dispose();
                     }
                 } else {
+                    new playAudio().playErrorSound();
                     JOptionPane.showMessageDialog(this, "Invalid Username", "Error", JOptionPane.ERROR_MESSAGE);
-                    new PlayAideo().playErrorSound();
+                    
 
                 }
 
 //     
             } else {
-                new PlayAideo().playErrorSound();
-                JOptionPane.showMessageDialog(this, "Please type Username & Password", "Incorrect password or username", JOptionPane.ERROR_MESSAGE);
+                new playAudio().playErrorSound();
+                JOptionPane.showMessageDialog(this, "Please type Username & Password", "Error", JOptionPane.ERROR_MESSAGE);
 
             }
-
-
+        } catch (Exception e) {
+            //JOptionPane.showMessageDialog(this, "Problem", "Incorrect password or username", JOptionPane.ERROR_MESSAGE);
         }
-        
-        
 
-
-    }//GEN-LAST:event_jPasswordFieldPasswordKeyPressed
-
-    private void jButtonLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonLoginActionPerformed
- 
-  
-  
-        if (!(this.jTextFieldUsername.getText().equals("Enter Username")
-                || this.jPasswordFieldPassword.getText().equals("@Enter_Password") || this.jTextFieldUsername.getText().equals("")
-                || this.jPasswordFieldPassword.getText().equals(""))) {
-
-            if (this.jTextFieldUsername.getText().matches("^([A-Za-z_][A-Za-z0-9_]*)$")) {
-               User user=dbManager.userAuthentication(this.jTextFieldUsername.getText(), this.jPasswordFieldPassword.getText());
-        if (user == null) {
-            JOptionPane.showMessageDialog(this, "Invalid Password or username!");
-            this.jTextFieldUsername.setText("Enter Username");
-            this.jPasswordFieldPassword.setText("@Enter_Password");
-        }
-            if ((user.getUser_name().equals(this.jTextFieldUsername.getText()))
-                    && (user.getPasssword().equals(this.jPasswordFieldPassword.getText()))) {
-                this.jTextFieldUsername.setText("");
-                this.jPasswordFieldPassword.setText("@Enter_Password");
-                new DashBoardPage().setVisible(true);
-                this.dispose();
-            }
-            } else {
-                JOptionPane.showMessageDialog(this, "Invalid Username", "Error", JOptionPane.ERROR_MESSAGE);
-                new PlayAideo().playErrorSound();
-
-            }
-
-//     
-
-        } else {
-            new PlayAideo().playErrorSound();
-            JOptionPane.showMessageDialog(this, "Please type Username & Password", "Incorrect password or username", JOptionPane.ERROR_MESSAGE);
-
-        }
     }//GEN-LAST:event_jButtonLoginActionPerformed
 
     private void jLabelMinMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelMinMouseClicked
@@ -396,6 +414,9 @@ DbManagerInterface dbManager;
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(LoginPage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */

@@ -12,10 +12,15 @@ import javax.swing.JApplet;
  *
  * @author Vksoni
  */
-public class PlayAideo {
+public class playAudio {
     public void playErrorSound() {
      
         AudioClip error = JApplet.newAudioClip(getClass().getResource("/zaptox/zaptoxpos/aideo/error.wav"));
+            error.play();
+    }
+      public void playSuccessSound() {
+     
+        AudioClip error = JApplet.newAudioClip(getClass().getResource("/zaptox/zaptoxpos/aideo/chaching.wav"));
             error.play();
     }
 }
