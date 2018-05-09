@@ -102,7 +102,12 @@ public class DashBoardPage extends javax.swing.JFrame {
         jButton1.setBackground(new java.awt.Color(0, 102, 255));
         jButton1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("jButton1");
+        jButton1.setText("Category");
+        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton1MouseClicked(evt);
+            }
+        });
         jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 220, 430, 120));
 
         jButtonViewUser.setBackground(new java.awt.Color(0, 102, 255));
@@ -119,7 +124,7 @@ public class DashBoardPage extends javax.swing.JFrame {
         jButtonViewUserType.setBackground(new java.awt.Color(0, 102, 255));
         jButtonViewUserType.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jButtonViewUserType.setForeground(new java.awt.Color(255, 255, 255));
-        jButtonViewUserType.setText("View UserType");
+        jButtonViewUserType.setText(" UserType");
         jButtonViewUserType.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonViewUserTypeActionPerformed(evt);
@@ -218,6 +223,12 @@ public class DashBoardPage extends javax.swing.JFrame {
         new UserPage().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButtonViewUserActionPerformed
+
+    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
+        // TODO add your handling code here:
+        new CategoryPage().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jButton1MouseClicked
 
     /**
      * @param args the command line arguments

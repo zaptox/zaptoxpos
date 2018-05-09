@@ -510,32 +510,38 @@ public class UserPage extends javax.swing.JFrame {
                 || name.equalsIgnoreCase("") || name.equalsIgnoreCase("") || contact.equals("Enter Contact...") || contact.equals("") || address.equals("Enter Address..") || address.equals(""))) {
 
             if (reTypePassword.equals(password)) {
-                int status = dbManager.insertUser(
-                        new User(0, user_type_id, this.jTextFieldUsername.getText(), this.jTextFieldPassword.getText(),
-                                this.jTextFieldName.getText(),
-                                address, contact, 1));
+                if (contact.matches("^[0][1-9]\\d{9}$|^[1-9]\\d{9}$")) {
+                    int status = dbManager.insertUser(
+                            new User(0, user_type_id, this.jTextFieldUsername.getText(), this.jTextFieldPassword.getText(),
+                                    this.jTextFieldName.getText(),
+                                    address, contact, 1));
 
-                if (status != 0) {
-                    JOptionPane.showMessageDialog(this, "Successfully added");
-                    showInTable();
-                    this.jTextFieldUsername.setText("Enter Username...");
-                    this.jTextFieldPassword.setText("Enter Password...");
-                    this.jTextFieldRetypePassword.setText("Retype Password...");
-                    this.jTextFieldContact.setText("Enter Contact..");
-                    this.jTextFieldAddress.setText("Enter Address...");
-                    this.jTextFieldName.setText("Enter Name..");
-                    this.jComboBoxUserType.setSelectedIndex(0);
+                    if (status != 0) {
+                        JOptionPane.showMessageDialog(this, "Successfully added");
+                        showInTable();
+                        this.jTextFieldUsername.setText("Enter Username...");
+                        this.jTextFieldPassword.setText("Enter Password...");
+                        this.jTextFieldRetypePassword.setText("Retype Password...");
+                        this.jTextFieldContact.setText("Enter Contact..");
+                        this.jTextFieldAddress.setText("Enter Address...");
+                        this.jTextFieldName.setText("Enter Name..");
+                        this.jComboBoxUserType.setSelectedIndex(0);
 
-                    this.jLabelRetype.setForeground(Color.gray);
-                    this.jTextFieldUsername.setForeground(Color.gray);
-                    this.jTextFieldPassword.setForeground(Color.gray);
-                    this.jTextFieldRetypePassword.setForeground(Color.gray);
-                    this.jTextFieldContact.setForeground(Color.gray);
-                    this.jTextFieldAddress.setForeground(Color.gray);
-                    this.jTextFieldName.setForeground(Color.gray);
+                        this.jLabelRetype.setForeground(Color.gray);
+                        this.jTextFieldUsername.setForeground(Color.gray);
+                        this.jTextFieldPassword.setForeground(Color.gray);
+                        this.jTextFieldRetypePassword.setForeground(Color.gray);
+                        this.jTextFieldContact.setForeground(Color.gray);
+                        this.jTextFieldAddress.setForeground(Color.gray);
+                        this.jTextFieldName.setForeground(Color.gray);
+
+                    }
+                } else {
+                    new playAudio().playErrorSound();
+
+                    JOptionPane.showMessageDialog(this, "Invalid phone number", "Error", JOptionPane.ERROR_MESSAGE);
 
                 }
-
             } else {
                 new playAudio().playErrorSound();
                 this.jLabelRetype.setForeground(Color.red);
@@ -567,45 +573,52 @@ public class UserPage extends javax.swing.JFrame {
                 || name.equalsIgnoreCase("") || name.equalsIgnoreCase("") || contact.equals("Enter Contact...") || contact.equals("") || address.equals("Enter Address..") || address.equals(""))) {
 
             if (reTypePassword.equals(password)) {
-                int status = dbManager.updateUser(
-                        new User(user_id, user_type_id, this.jTextFieldUsername.getText(), this.jTextFieldPassword.getText(),
-                                this.jTextFieldName.getText(),
-                                address, contact, 1));
-                this.jLabelRetype.setForeground(Color.black);
+                if (contact.matches("^[0][1-9]\\d{9}$|^[1-9]\\d{9}$")) {
 
-                if (status != 0) {
-                    JOptionPane.showMessageDialog(this, "Successfully updated");
-                    showInTable();
-                    this.jTextFieldUsername.setText("Enter Username...");
-                    this.jTextFieldPassword.setText("Enter Password...");
-                    this.jTextFieldRetypePassword.setText("Retype Password...");
-                    this.jTextFieldContact.setText("Enter Contact..");
-                    this.jTextFieldAddress.setText("Enter Address...");
-                    this.jTextFieldName.setText("Enter Name..");
-                    this.jComboBoxUserType.setSelectedIndex(0);
-                    this.jButtonUpdate.setVisible(false);
-                    this.jButtonDelete.setVisible(false);
-                    this.jButtonSave.setVisible(true);
+                    int status = dbManager.updateUser(
+                            new User(user_id, user_type_id, this.jTextFieldUsername.getText(), this.jTextFieldPassword.getText(),
+                                    this.jTextFieldName.getText(),
+                                    address, contact, 1));
+                    this.jLabelRetype.setForeground(Color.black);
 
-                    this.jLabelRetype.setForeground(Color.gray);
-                    this.jTextFieldUsername.setForeground(Color.gray);
-                    this.jTextFieldPassword.setForeground(Color.gray);
-                    this.jTextFieldRetypePassword.setForeground(Color.gray);
-                    this.jTextFieldContact.setForeground(Color.gray);
-                    this.jTextFieldAddress.setForeground(Color.gray);
-                    this.jTextFieldName.setForeground(Color.gray);
+                    if (status != 0) {
+                        JOptionPane.showMessageDialog(this, "Successfully updated");
+                        showInTable();
+                        this.jTextFieldUsername.setText("Enter Username...");
+                        this.jTextFieldPassword.setText("Enter Password...");
+                        this.jTextFieldRetypePassword.setText("Retype Password...");
+                        this.jTextFieldContact.setText("Enter Contact..");
+                        this.jTextFieldAddress.setText("Enter Address...");
+                        this.jTextFieldName.setText("Enter Name..");
+                        this.jComboBoxUserType.setSelectedIndex(0);
+                        this.jButtonUpdate.setVisible(false);
+                        this.jButtonDelete.setVisible(false);
+                        this.jButtonSave.setVisible(true);
+
+                        this.jLabelRetype.setForeground(Color.gray);
+                        this.jTextFieldUsername.setForeground(Color.gray);
+                        this.jTextFieldPassword.setForeground(Color.gray);
+                        this.jTextFieldRetypePassword.setForeground(Color.gray);
+                        this.jTextFieldContact.setForeground(Color.gray);
+                        this.jTextFieldAddress.setForeground(Color.gray);
+                        this.jTextFieldName.setForeground(Color.gray);
+
+                    }} else {
+                    new playAudio().playErrorSound();
+
+                    JOptionPane.showMessageDialog(this, "Invalid phone number", "Error", JOptionPane.ERROR_MESSAGE);
 
                 }
+                } else {
+                    this.jLabelRetype.setForeground(Color.red);
+
+                    JOptionPane.showMessageDialog(this, "Password not match");
+                    this.jLabelRetype.setForeground(Color.red);
+                }
             } else {
-                                this.jLabelRetype.setForeground(Color.red);
+                JOptionPane.showMessageDialog(this, "Please fill required field");
 
-                JOptionPane.showMessageDialog(this, "Password not match");
-                this.jLabelRetype.setForeground(Color.red);
             }
-        } else {
-            JOptionPane.showMessageDialog(this, "Please fill required field");
-
-        }
 
     }//GEN-LAST:event_jButtonUpdateActionPerformed
 
@@ -626,7 +639,7 @@ public class UserPage extends javax.swing.JFrame {
         this.jTextFieldContact.setForeground(Color.gray);
         this.jTextFieldAddress.setForeground(Color.gray);
         this.jTextFieldName.setForeground(Color.gray);
-        
+
         this.jButtonUpdate.setVisible(false);
         this.jButtonDelete.setVisible(false);
         this.jButtonSave.setVisible(true);
