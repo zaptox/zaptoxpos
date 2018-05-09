@@ -38,7 +38,7 @@ public class DashBoardPage extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jButtonViewUser = new javax.swing.JButton();
         jButtonViewUserType = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        jButtonProducts = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
         jButton7 = new javax.swing.JButton();
@@ -132,11 +132,16 @@ public class DashBoardPage extends javax.swing.JFrame {
         });
         jPanel1.add(jButtonViewUserType, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 220, 430, 120));
 
-        jButton4.setBackground(new java.awt.Color(0, 102, 255));
-        jButton4.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jButton4.setForeground(new java.awt.Color(255, 255, 255));
-        jButton4.setText("jButton1");
-        jPanel1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 350, 430, 120));
+        jButtonProducts.setBackground(new java.awt.Color(0, 102, 255));
+        jButtonProducts.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jButtonProducts.setForeground(new java.awt.Color(255, 255, 255));
+        jButtonProducts.setText("Products");
+        jButtonProducts.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonProductsActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButtonProducts, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 350, 430, 120));
 
         jButton5.setBackground(new java.awt.Color(0, 102, 255));
         jButton5.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -230,6 +235,12 @@ public class DashBoardPage extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_jButton1MouseClicked
 
+    private void jButtonProductsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonProductsActionPerformed
+        // TODO add your handling code here:
+        new ProductsPage().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jButtonProductsActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -267,12 +278,12 @@ public class DashBoardPage extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
+    private javax.swing.JButton jButtonProducts;
     private javax.swing.JButton jButtonViewUser;
     private javax.swing.JButton jButtonViewUserType;
     private javax.swing.JLabel jLabel8;
