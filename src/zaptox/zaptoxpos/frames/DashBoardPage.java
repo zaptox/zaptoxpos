@@ -6,6 +6,7 @@
 package zaptox.zaptoxpos.frames;
 
 import java.awt.Color;
+import java.awt.GridBagLayout;
 import javax.swing.JFrame;
 
 /**
@@ -17,8 +18,14 @@ public class DashBoardPage extends javax.swing.JFrame {
     /**
      * Creates new form DashBoardPage
      */
+    ProductInternalFrame product_frame;
+    UserInternalFrame user_frame;
+
     public DashBoardPage() {
         initComponents();
+        product_frame = new ProductInternalFrame();
+        user_frame = new UserInternalFrame();
+
     }
 
     /**
@@ -34,16 +41,21 @@ public class DashBoardPage extends javax.swing.JFrame {
         jLabelExit = new javax.swing.JLabel();
         jLabelHeaderRow = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
-        jLabel8 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        jDesktopPane1 = new javax.swing.JDesktopPane();
+        jPanel2 = new javax.swing.JPanel();
+        jPanel4 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
         jButtonViewUser = new javax.swing.JButton();
-        jButtonViewUserType = new javax.swing.JButton();
-        jButtonProducts = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
-        jButton8 = new javax.swing.JButton();
-        jButton9 = new javax.swing.JButton();
+        jButtonViewProducts = new javax.swing.JButton();
+        jButtonViewUser5 = new javax.swing.JButton();
+        jButtonView3 = new javax.swing.JButton();
+        jButtonViewUser9 = new javax.swing.JButton();
+        jButtonViewUser6 = new javax.swing.JButton();
+        jButtonViewUser10 = new javax.swing.JButton();
+        jButtonViewUser11 = new javax.swing.JButton();
+        jButtonViewUser12 = new javax.swing.JButton();
+        jPanel3 = new javax.swing.JPanel();
+        jLabel8 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -95,95 +107,124 @@ public class DashBoardPage extends javax.swing.JFrame {
         jPanel1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel8.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
-        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/zaptox/zaptoxpos/images/logo.png"))); // NOI18N
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, 300, 120));
+        jDesktopPane1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.add(jDesktopPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 1110, 660));
 
-        jButton1.setBackground(new java.awt.Color(0, 102, 255));
-        jButton1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Category");
-        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton1MouseClicked(evt);
-            }
-        });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 220, 430, 120));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 40, 1130, 680));
 
-        jButtonViewUser.setBackground(new java.awt.Color(0, 102, 255));
+        jPanel2.setBackground(new java.awt.Color(0, 102, 255));
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel1.setText("jLabel1");
+        jPanel4.add(jLabel1);
+
+        jPanel2.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 250, 240, 60));
+
+        jButtonViewUser.setBackground(new java.awt.Color(255, 255, 255));
         jButtonViewUser.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jButtonViewUser.setForeground(new java.awt.Color(255, 255, 255));
-        jButtonViewUser.setText("View User");
+        jButtonViewUser.setForeground(new java.awt.Color(0, 102, 255));
+        jButtonViewUser.setText("User");
         jButtonViewUser.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonViewUserActionPerformed(evt);
             }
         });
-        jPanel1.add(jButtonViewUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 220, 430, 120));
+        jPanel2.add(jButtonViewUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 220, 50));
 
-        jButtonViewUserType.setBackground(new java.awt.Color(0, 102, 255));
-        jButtonViewUserType.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jButtonViewUserType.setForeground(new java.awt.Color(255, 255, 255));
-        jButtonViewUserType.setText(" UserType");
-        jButtonViewUserType.addActionListener(new java.awt.event.ActionListener() {
+        jButtonViewProducts.setBackground(new java.awt.Color(255, 255, 255));
+        jButtonViewProducts.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jButtonViewProducts.setForeground(new java.awt.Color(0, 102, 255));
+        jButtonViewProducts.setText("Products");
+        jButtonViewProducts.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonViewUserTypeActionPerformed(evt);
+                jButtonViewProductsActionPerformed(evt);
             }
         });
-        jPanel1.add(jButtonViewUserType, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 220, 430, 120));
+        jPanel2.add(jButtonViewProducts, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 220, 50));
 
-        jButtonProducts.setBackground(new java.awt.Color(0, 102, 255));
-        jButtonProducts.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jButtonProducts.setForeground(new java.awt.Color(255, 255, 255));
-        jButtonProducts.setText("Products");
-        jButtonProducts.addActionListener(new java.awt.event.ActionListener() {
+        jButtonViewUser5.setBackground(new java.awt.Color(255, 255, 255));
+        jButtonViewUser5.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jButtonViewUser5.setForeground(new java.awt.Color(0, 102, 255));
+        jButtonViewUser5.setText("View User");
+        jButtonViewUser5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonProductsActionPerformed(evt);
+                jButtonViewUser5ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButtonProducts, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 350, 430, 120));
+        jPanel2.add(jButtonViewUser5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 190, 220, 50));
 
-        jButton5.setBackground(new java.awt.Color(0, 102, 255));
-        jButton5.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jButton5.setForeground(new java.awt.Color(255, 255, 255));
-        jButton5.setText("jButton1");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
+        jButtonView3.setBackground(new java.awt.Color(255, 255, 255));
+        jButtonView3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jButtonView3.setForeground(new java.awt.Color(0, 102, 255));
+        jButtonView3.setText("View User");
+        jButtonView3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+                jButtonView3ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 350, 430, 120));
+        jPanel2.add(jButtonView3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 130, 220, 50));
 
-        jButton6.setBackground(new java.awt.Color(0, 102, 255));
-        jButton6.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jButton6.setForeground(new java.awt.Color(255, 255, 255));
-        jButton6.setText("jButton1");
-        jPanel1.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 350, 430, 120));
-
-        jButton7.setBackground(new java.awt.Color(0, 102, 255));
-        jButton7.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jButton7.setForeground(new java.awt.Color(255, 255, 255));
-        jButton7.setText("jButton1");
-        jPanel1.add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 480, 430, 120));
-
-        jButton8.setBackground(new java.awt.Color(0, 102, 255));
-        jButton8.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jButton8.setForeground(new java.awt.Color(255, 255, 255));
-        jButton8.setText("jButton1");
-        jButton8.addActionListener(new java.awt.event.ActionListener() {
+        jButtonViewUser9.setBackground(new java.awt.Color(255, 255, 255));
+        jButtonViewUser9.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jButtonViewUser9.setForeground(new java.awt.Color(0, 102, 255));
+        jButtonViewUser9.setText("View User");
+        jButtonViewUser9.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton8ActionPerformed(evt);
+                jButtonViewUser9ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 480, 430, 120));
+        jPanel2.add(jButtonViewUser9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 250, 220, 50));
 
-        jButton9.setBackground(new java.awt.Color(0, 102, 255));
-        jButton9.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jButton9.setForeground(new java.awt.Color(255, 255, 255));
-        jButton9.setText("jButton1");
-        jPanel1.add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 480, 430, 120));
+        jButtonViewUser6.setBackground(new java.awt.Color(255, 255, 255));
+        jButtonViewUser6.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jButtonViewUser6.setForeground(new java.awt.Color(0, 102, 255));
+        jButtonViewUser6.setText("View User");
+        jButtonViewUser6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonViewUser6ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(jButtonViewUser6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 310, 220, 50));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 1360, 730));
+        jButtonViewUser10.setBackground(new java.awt.Color(255, 255, 255));
+        jButtonViewUser10.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jButtonViewUser10.setForeground(new java.awt.Color(0, 102, 255));
+        jButtonViewUser10.setText("View User");
+        jButtonViewUser10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonViewUser10ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(jButtonViewUser10, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 370, 220, 50));
+
+        jButtonViewUser11.setBackground(new java.awt.Color(255, 255, 255));
+        jButtonViewUser11.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jButtonViewUser11.setForeground(new java.awt.Color(0, 102, 255));
+        jButtonViewUser11.setText("View User");
+        jButtonViewUser11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonViewUser11ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(jButtonViewUser11, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 430, 220, 50));
+
+        jButtonViewUser12.setBackground(new java.awt.Color(255, 255, 255));
+        jButtonViewUser12.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jButtonViewUser12.setForeground(new java.awt.Color(0, 102, 255));
+        jButtonViewUser12.setText("View User");
+        jButtonViewUser12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonViewUser12ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(jButtonViewUser12, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 490, 220, 50));
+
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 150, 220, 580));
+        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 150, -1, -1));
+
+        jLabel8.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/zaptox/zaptoxpos/images/logo.png"))); // NOI18N
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 220, 110));
 
         pack();
         setLocationRelativeTo(null);
@@ -209,37 +250,59 @@ public class DashBoardPage extends javax.swing.JFrame {
         this.jLabelExit.setBackground(new Color(0, 102, 255));
     }//GEN-LAST:event_jLabelExitMouseExited
 
-    private void jButtonViewUserTypeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonViewUserTypeActionPerformed
-        // TODO add your handling code here:
-        new UserTypePage().setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_jButtonViewUserTypeActionPerformed
-
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton5ActionPerformed
-
-    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton8ActionPerformed
-
     private void jButtonViewUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonViewUserActionPerformed
         // TODO add your handling code here:
-        new UserPage().setVisible(true);
-        this.dispose();
+        try {
+            this.jDesktopPane1.add(user_frame);
+            user_frame.show();
+            if (product_frame.isVisible()) {
+                product_frame.hide();
+            }
+        } catch (Exception e) {
+        }
     }//GEN-LAST:event_jButtonViewUserActionPerformed
 
-    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
+    private void jButtonViewProductsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonViewProductsActionPerformed
         // TODO add your handling code here:
-        new CategoryPage().setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_jButton1MouseClicked
+//
+        try {
+            this.jDesktopPane1.add(product_frame);
+            product_frame.show();
+            if (user_frame.isVisible()) {
+                user_frame.hide();
+            }
+        } catch (Exception e) {
+        }
+    }//GEN-LAST:event_jButtonViewProductsActionPerformed
 
-    private void jButtonProductsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonProductsActionPerformed
+    private void jButtonViewUser5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonViewUser5ActionPerformed
         // TODO add your handling code here:
-        new ProductsPage().setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_jButtonProductsActionPerformed
+    }//GEN-LAST:event_jButtonViewUser5ActionPerformed
+
+    private void jButtonView3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonView3ActionPerformed
+        // TODO add your handling code here:
+
+    }//GEN-LAST:event_jButtonView3ActionPerformed
+
+    private void jButtonViewUser9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonViewUser9ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonViewUser9ActionPerformed
+
+    private void jButtonViewUser6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonViewUser6ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonViewUser6ActionPerformed
+
+    private void jButtonViewUser10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonViewUser10ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonViewUser10ActionPerformed
+
+    private void jButtonViewUser11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonViewUser11ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonViewUser11ActionPerformed
+
+    private void jButtonViewUser12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonViewUser12ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonViewUser12ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -277,19 +340,24 @@ public class DashBoardPage extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
-    private javax.swing.JButton jButton9;
-    private javax.swing.JButton jButtonProducts;
+    private javax.swing.JButton jButtonView3;
+    private javax.swing.JButton jButtonViewProducts;
     private javax.swing.JButton jButtonViewUser;
-    private javax.swing.JButton jButtonViewUserType;
+    private javax.swing.JButton jButtonViewUser10;
+    private javax.swing.JButton jButtonViewUser11;
+    private javax.swing.JButton jButtonViewUser12;
+    private javax.swing.JButton jButtonViewUser5;
+    private javax.swing.JButton jButtonViewUser6;
+    private javax.swing.JButton jButtonViewUser9;
+    private javax.swing.JDesktopPane jDesktopPane1;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabelExit;
     private javax.swing.JLabel jLabelHeaderRow;
     private javax.swing.JLabel jLabelMin;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
     // End of variables declaration//GEN-END:variables
 }
