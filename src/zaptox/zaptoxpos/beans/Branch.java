@@ -15,14 +15,26 @@ public class Branch {
     String branch_address;
     double profit;
     double loss;
+    int active;
 
-    public Branch(int branch_id, String branch_owner_name, String branch_address, double profit, double loss) {
+    public Branch(int branch_id, String branch_owner_name, String branch_address, double profit, double loss, int active) {
         this.branch_id = branch_id;
         this.branch_owner_name = branch_owner_name;
         this.branch_address = branch_address;
         this.profit = profit;
         this.loss = loss;
+        this.active = active;
     }
+
+    public int getActive() {
+        return active;
+    }
+
+    public void setActive(int active) {
+        this.active = active;
+    }
+
+    
 
     public int getBranch_id() {
         return branch_id;

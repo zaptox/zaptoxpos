@@ -10,29 +10,61 @@ package zaptox.zaptoxpos.beans;
  * @author Dell
  */
 public class Product {
-    private int product_id;
-private int category_id;
-private String name;
-private int price;
-private int active;
-private int quantity;
-private int created_by;
-private String created_date;
-private int modified_by;
-private String modified_date;
 
-    public Product(int product_id, int category_id, String name, int price, int active, int quantity, int created_by, String created_date, int modified_by, String modified_date) {
+    private int product_id;
+    private int category_id;
+    private String name;
+    private int actual_price;
+    private int selling_price;
+    private int active;
+    private int quantity;
+    private int created_by;
+    private String created_date;
+    private int modified_by;
+    private String modified_date;
+    private String product_barcode;
+
+    public Product(int product_id, int category_id, String name, int actual_price, int selling_price, int active, int quantity, int created_by, String created_date, int modified_by, String modified_date, String product_barcode) {
         this.product_id = product_id;
         this.category_id = category_id;
         this.name = name;
-        this.price = price;
+        this.actual_price = actual_price;
+        this.selling_price = selling_price;
         this.active = active;
         this.quantity = quantity;
         this.created_by = created_by;
         this.created_date = created_date;
         this.modified_by = modified_by;
         this.modified_date = modified_date;
+        this.product_barcode = product_barcode;
     }
+
+    public String getProduct_barcode() {
+        return product_barcode;
+    }
+
+    public void setProduct_barcode(String product_barcode) {
+        this.product_barcode = product_barcode;
+    }
+
+    
+
+    public int getActual_price() {
+        return actual_price;
+    }
+
+    public void setActual_price(int actual_price) {
+        this.actual_price = actual_price;
+    }
+
+    public int getSelling_price() {
+        return selling_price;
+    }
+
+    public void setSelling_price(int selling_price) {
+        this.selling_price = selling_price;
+    }
+
 
     public int getProduct_id() {
         return product_id;
@@ -58,13 +90,6 @@ private String modified_date;
         this.name = name;
     }
 
-    public int getPrice() {
-        return price;
-    }
-
-    public void setPrice(int price) {
-        this.price = price;
-    }
 
     public int getActive() {
         return active;
@@ -114,5 +139,4 @@ private String modified_date;
         this.modified_date = modified_date;
     }
 
-    
 }

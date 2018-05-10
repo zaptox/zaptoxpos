@@ -15,14 +15,25 @@ public class BorrowRecords {
     String customer_address;
     int amount;
     String contact;
+    int active;
 
-    public BorrowRecords(int borrow_id, String customer_name, String customer_address, int amount, String contact) {
+    public BorrowRecords(int borrow_id, String customer_name, String customer_address, int amount, String contact, int active) {
         this.borrow_id = borrow_id;
         this.customer_name = customer_name;
         this.customer_address = customer_address;
         this.amount = amount;
         this.contact = contact;
+        this.active = active;
     }
+
+    public int getActive() {
+        return active;
+    }
+
+    public void setActive(int active) {
+        this.active = active;
+    }
+
 
     public int getBorrow_id() {
         return borrow_id;

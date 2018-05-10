@@ -13,12 +13,35 @@ public class ReturnProduct {
     int return_id;
     int product_id;
     int quantity;
+    int active;
+    String return_date;
 
-    public ReturnProduct(int return_id, int product_id, int quantity) {
+    public ReturnProduct(int return_id, int product_id, int quantity, int active, String return_date) {
         this.return_id = return_id;
         this.product_id = product_id;
         this.quantity = quantity;
+        this.active = active;
+        this.return_date = return_date;
     }
+
+    public String getReturn_date() {
+        return return_date;
+    }
+
+    public void setReturn_date(String return_date) {
+        this.return_date = return_date;
+    }
+
+    
+
+    public int getActive() {
+        return active;
+    }
+
+    public void setActive(int active) {
+        this.active = active;
+    }
+    
 
     public int getReturn_id() {
         return return_id;

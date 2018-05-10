@@ -26,7 +26,7 @@ import zaptox.zaptoxpos.beans.UserType;
  */
 public interface DbManagerInterface {
 
-    public ArrayList<User> getAllUsers();
+      public ArrayList<User> getAllUsers();
    public User getUser(int user_id);
    public int updateUser(User user);
    public int deleteUser(User user);
@@ -83,24 +83,23 @@ public interface DbManagerInterface {
    
    
    public ArrayList<BorrowRecords> getAllBorrowRecords();
-   public Category getBorrowRecords(int borrow_id);
+   public BorrowRecords getBorrowRecords(int borrow_id);
    public int updateBorrowRecords(BorrowRecords b);
    public int deleteBorrowRecords(BorrowRecords b);
    public int insertBorrowRecords(BorrowRecords b);
    
    public ArrayList<Branch> getAllBranch();
-   public Category getBranch(int branch_id);
+   public Branch getBranch(int branch_id);
    public int updateBranch(Branch b);
    public int deleteBranch(Branch b);
    public int insertBranch(Branch b);
    
    public ArrayList<ReturnProduct> getAllReturnProduct();
-   public Category getReturnProduct(int return_id);
+   public ReturnProduct getReturnProduct(int return_id);
    public int updateReturnProduct(ReturnProduct b);
    public int deleteReturnProduct(ReturnProduct b);
    public int insertReturnProduct(ReturnProduct b);
    
    
-   
-   
+
 }
