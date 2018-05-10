@@ -5,6 +5,18 @@
  */
 package zaptox.zaptoxpos.frames;
 
+import java.awt.Color;
+import java.awt.Font;
+import java.util.ArrayList;
+import java.util.Vector;
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.table.JTableHeader;
+import zaptox.zaptoxpos.beans.User;
+import zaptox.zaptoxpos.beans.UserType;
+import zaptox.zaptoxpos.dao.DbManager;
+import zaptox.zaptoxpos.dao.DbManagerInterface;
+
 /**
  *
  * @author Vksoni
@@ -14,8 +26,25 @@ public class UserInternalFrame extends javax.swing.JInternalFrame {
     /**
      * Creates new form UserInternalFrame
      */
+    DefaultTableModel tableModelUser;
+    DefaultComboBoxModel comboBoxModelUserType;
+    public ArrayList<UserType> user_types_list;
+    public ArrayList<User> users_list;
+    DbManagerInterface dbManager;
+
     public UserInternalFrame() {
         initComponents();
+        JTableHeader header = this.jTableUser.getTableHeader();
+        header.setBackground(new Color(0, 102, 255));
+        header.setForeground(new Color(255, 255, 255));
+        header.setFont(new Font("SansSerif", Font.BOLD, 16));
+
+        dbManager = new DbManager();
+        user_types_list = dbManager.getAllUsersType();
+        tableModelUser = (DefaultTableModel) this.jTableUser.getModel();
+
+        showInTable();
+
     }
 
     /**
@@ -27,34 +56,84 @@ public class UserInternalFrame extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton1 = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTableUser = new javax.swing.JTable();
 
         setClosable(true);
 
-        jButton1.setText("jButton1");
+        jTableUser.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jTableUser.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "User Type", "Username", "Name", "Contact#", "Address"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jTableUser.setToolTipText("Products");
+        jTableUser.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jTableUser.setGridColor(new java.awt.Color(0, 102, 255));
+        jTableUser.setSelectionBackground(new java.awt.Color(0, 102, 255));
+        jTableUser.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTableUserMouseClicked(evt);
+            }
+        });
+        jScrollPane1.setViewportView(jTableUser);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(495, 495, 495)
-                .addComponent(jButton1)
-                .addContainerGap(520, Short.MAX_VALUE))
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1088, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(183, 183, 183)
-                .addComponent(jButton1)
-                .addContainerGap(415, Short.MAX_VALUE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 566, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 55, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jTableUserMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableUserMouseClicked
+        // TODO add your handling code here:
+       
+    }//GEN-LAST:event_jTableUserMouseClicked
 
+public void showInTable() {
+        tableModelUser.setRowCount(0);
+
+        users_list = dbManager.getAllUsers();
+        for (User user : users_list) {
+            Vector V = new Vector();
+            V.add(dbManager.getUserType(user.getUser_type_id()).getUser_type());
+            V.add(user.getUser_name());
+            V.add(user.getName());
+            V.add(user.getContact_number());
+            V.add(user.getAddress());
+
+            tableModelUser.addRow(V);
+        }
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable jTableUser;
     // End of variables declaration//GEN-END:variables
 }
