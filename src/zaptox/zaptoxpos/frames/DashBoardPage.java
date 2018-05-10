@@ -6,7 +6,7 @@
 package zaptox.zaptoxpos.frames;
 
 import java.awt.Color;
-import java.awt.GridBagLayout;
+
 import javax.swing.JFrame;
 
 /**
@@ -253,10 +253,12 @@ public class DashBoardPage extends javax.swing.JFrame {
     private void jButtonViewUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonViewUserActionPerformed
         // TODO add your handling code here:
         try {
-            this.jDesktopPane1.add(user_frame);
             user_frame.show();
+            this.jDesktopPane1.removeAll();
+
+            this.jDesktopPane1.add(user_frame);
             if (product_frame.isVisible()) {
-                product_frame.hide();
+                product_frame.dispose();
             }
         } catch (Exception e) {
         }
@@ -265,11 +267,15 @@ public class DashBoardPage extends javax.swing.JFrame {
     private void jButtonViewProductsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonViewProductsActionPerformed
         // TODO add your handling code here:
 //
+
         try {
-            this.jDesktopPane1.add(product_frame);
+            this.jDesktopPane1.removeAll();
             product_frame.show();
+
+            this.jDesktopPane1.add(product_frame);
             if (user_frame.isVisible()) {
-                user_frame.hide();
+                user_frame.dispose();
+
             }
         } catch (Exception e) {
         }
