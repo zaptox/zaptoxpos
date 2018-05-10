@@ -129,7 +129,7 @@ public class DashBoardPage extends javax.swing.JFrame {
                 jButtonViewUserActionPerformed(evt);
             }
         });
-        jPanel2.add(jButtonViewUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 220, 50));
+        jPanel2.add(jButtonViewUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 220, 50));
 
         jButtonViewProducts.setBackground(new java.awt.Color(255, 255, 255));
         jButtonViewProducts.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -140,7 +140,7 @@ public class DashBoardPage extends javax.swing.JFrame {
                 jButtonViewProductsActionPerformed(evt);
             }
         });
-        jPanel2.add(jButtonViewProducts, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 220, 50));
+        jPanel2.add(jButtonViewProducts, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 220, 50));
 
         jButtonViewUser5.setBackground(new java.awt.Color(255, 255, 255));
         jButtonViewUser5.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -151,7 +151,7 @@ public class DashBoardPage extends javax.swing.JFrame {
                 jButtonViewUser5ActionPerformed(evt);
             }
         });
-        jPanel2.add(jButtonViewUser5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 190, 220, 50));
+        jPanel2.add(jButtonViewUser5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 150, 220, 50));
 
         jButtonView3.setBackground(new java.awt.Color(255, 255, 255));
         jButtonView3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -162,7 +162,7 @@ public class DashBoardPage extends javax.swing.JFrame {
                 jButtonView3ActionPerformed(evt);
             }
         });
-        jPanel2.add(jButtonView3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 130, 220, 50));
+        jPanel2.add(jButtonView3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 220, 50));
 
         jButtonViewUser9.setBackground(new java.awt.Color(255, 255, 255));
         jButtonViewUser9.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -173,7 +173,7 @@ public class DashBoardPage extends javax.swing.JFrame {
                 jButtonViewUser9ActionPerformed(evt);
             }
         });
-        jPanel2.add(jButtonViewUser9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 250, 220, 50));
+        jPanel2.add(jButtonViewUser9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 200, 220, 50));
 
         jButtonViewUser6.setBackground(new java.awt.Color(255, 255, 255));
         jButtonViewUser6.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -184,7 +184,7 @@ public class DashBoardPage extends javax.swing.JFrame {
                 jButtonViewUser6ActionPerformed(evt);
             }
         });
-        jPanel2.add(jButtonViewUser6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 310, 220, 50));
+        jPanel2.add(jButtonViewUser6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 250, 220, 50));
 
         jButtonViewUser10.setBackground(new java.awt.Color(255, 255, 255));
         jButtonViewUser10.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -195,7 +195,7 @@ public class DashBoardPage extends javax.swing.JFrame {
                 jButtonViewUser10ActionPerformed(evt);
             }
         });
-        jPanel2.add(jButtonViewUser10, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 370, 220, 50));
+        jPanel2.add(jButtonViewUser10, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 300, 220, 50));
 
         jButtonViewUser11.setBackground(new java.awt.Color(255, 255, 255));
         jButtonViewUser11.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -206,7 +206,7 @@ public class DashBoardPage extends javax.swing.JFrame {
                 jButtonViewUser11ActionPerformed(evt);
             }
         });
-        jPanel2.add(jButtonViewUser11, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 430, 220, 50));
+        jPanel2.add(jButtonViewUser11, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 350, 220, 50));
 
         jButtonViewUser12.setBackground(new java.awt.Color(255, 255, 255));
         jButtonViewUser12.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
