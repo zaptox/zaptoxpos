@@ -7,6 +7,7 @@ package zaptox.zaptoxpos.frames;
 
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.Frame;
 import java.util.ArrayList;
 import java.util.Vector;
 import javax.swing.DefaultComboBoxModel;
@@ -178,11 +179,14 @@ public class UserInternalFrame extends javax.swing.JInternalFrame {
 
     private void jTableUserMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableUserMouseClicked
         // TODO add your handling code here:
-       
+
     }//GEN-LAST:event_jTableUserMouseClicked
 
     private void jButtonViewUser6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonViewUser6ActionPerformed
         // TODO add your handling code here:
+        UserInternalFrame user=new UserInternalFrame();
+       new DialogBox(null, false).setVisible(true);
+          
     }//GEN-LAST:event_jButtonViewUser6ActionPerformed
 
     private void jButtonViewUser7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonViewUser7ActionPerformed
@@ -197,7 +201,7 @@ public class UserInternalFrame extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButtonViewUser9ActionPerformed
 
-public void showInTable() {
+    public void showInTable() {
         tableModelUser.setRowCount(0);
 
         users_list = dbManager.getAllUsers();
