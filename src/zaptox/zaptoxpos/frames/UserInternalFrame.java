@@ -5,6 +5,7 @@
  */
 package zaptox.zaptoxpos.frames;
 
+import zaptox.zaptoxpos.dialog.DialogBox;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Frame;
@@ -65,6 +66,7 @@ public class UserInternalFrame extends javax.swing.JInternalFrame {
         jButtonViewUser9 = new javax.swing.JButton();
 
         setClosable(true);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jTableUser.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jTableUser.setModel(new javax.swing.table.DefaultTableModel(
@@ -101,15 +103,18 @@ public class UserInternalFrame extends javax.swing.JInternalFrame {
         });
         jScrollPane1.setViewportView(jTableUser);
 
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 11, 1089, 547));
+
         jButtonViewUser6.setBackground(new java.awt.Color(255, 255, 255));
         jButtonViewUser6.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jButtonViewUser6.setForeground(new java.awt.Color(0, 102, 255));
-        jButtonViewUser6.setText("View User");
+        jButtonViewUser6.setText("New");
         jButtonViewUser6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonViewUser6ActionPerformed(evt);
             }
         });
+        getContentPane().add(jButtonViewUser6, new org.netbeans.lib.awtextra.AbsoluteConstraints(81, 564, 220, 50));
 
         jButtonViewUser7.setBackground(new java.awt.Color(255, 255, 255));
         jButtonViewUser7.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -120,6 +125,7 @@ public class UserInternalFrame extends javax.swing.JInternalFrame {
                 jButtonViewUser7ActionPerformed(evt);
             }
         });
+        getContentPane().add(jButtonViewUser7, new org.netbeans.lib.awtextra.AbsoluteConstraints(767, 564, 220, 50));
 
         jButtonViewUser8.setBackground(new java.awt.Color(255, 255, 255));
         jButtonViewUser8.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -130,6 +136,7 @@ public class UserInternalFrame extends javax.swing.JInternalFrame {
                 jButtonViewUser8ActionPerformed(evt);
             }
         });
+        getContentPane().add(jButtonViewUser8, new org.netbeans.lib.awtextra.AbsoluteConstraints(307, 564, 220, 50));
 
         jButtonViewUser9.setBackground(new java.awt.Color(255, 255, 255));
         jButtonViewUser9.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -140,39 +147,7 @@ public class UserInternalFrame extends javax.swing.JInternalFrame {
                 jButtonViewUser9ActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1)
-                .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
-                .addGap(81, 81, 81)
-                .addComponent(jButtonViewUser6, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButtonViewUser8, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButtonViewUser9, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButtonViewUser7, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(122, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 543, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButtonViewUser6, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButtonViewUser7, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButtonViewUser8, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButtonViewUser9, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap())
-        );
+        getContentPane().add(jButtonViewUser9, new org.netbeans.lib.awtextra.AbsoluteConstraints(537, 564, 220, 50));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
