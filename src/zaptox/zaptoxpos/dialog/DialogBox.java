@@ -35,10 +35,9 @@ public class DialogBox extends javax.swing.JDialog {
         initComponents();
         dbManager = new DbManager();
         user_types_list = dbManager.getAllUsersType();
-        comboBoxModelUserType = (DefaultComboBoxModel) this.jComboBoxUserType.getModel();
-        this.jComboBoxUserType.setVisible(true);
+        comboBoxModelUserType = (DefaultComboBoxModel) this.jComboBoxUserTypes.getModel();
+        this.jComboBoxUserTypes.setVisible(true);
         showInUserTypesComboBox();
-
 
     }
 
@@ -62,7 +61,7 @@ public class DialogBox extends javax.swing.JDialog {
         jTextFieldAddress = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
-        jComboBoxUserType2 = new javax.swing.JComboBox<>();
+        jComboBoxUserTypes = new javax.swing.JComboBox<>();
         jSeparator9 = new javax.swing.JSeparator();
         jSeparator2 = new javax.swing.JSeparator();
         jTextFieldUsername = new javax.swing.JTextField();
@@ -78,7 +77,7 @@ public class DialogBox extends javax.swing.JDialog {
         jLabel8 = new javax.swing.JLabel();
         jButtonSave = new javax.swing.JButton();
         jButtonSave1 = new javax.swing.JButton();
-        jButtonSave2 = new javax.swing.JButton();
+        jButtonSaveUser = new javax.swing.JButton();
         jButtonClear = new javax.swing.JButton();
         jLabelExit = new javax.swing.JLabel();
         jLabelHeaderRow = new javax.swing.JLabel();
@@ -101,11 +100,9 @@ public class DialogBox extends javax.swing.JDialog {
         jPanel7.setBackground(new java.awt.Color(255, 255, 255));
         jPanel7.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
         jPanel7.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        jPanel7.add(jSeparator7, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 190, 270, -1));
+        jPanel7.add(jSeparator7, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 270, 270, -1));
 
         jTextFieldContact.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jTextFieldContact.setForeground(new java.awt.Color(153, 153, 153));
-        jTextFieldContact.setText("Enter Contact...");
         jTextFieldContact.setBorder(null);
         jTextFieldContact.setDisabledTextColor(new java.awt.Color(204, 204, 204));
         jTextFieldContact.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -123,17 +120,15 @@ public class DialogBox extends javax.swing.JDialog {
                 jTextFieldContactKeyPressed(evt);
             }
         });
-        jPanel7.add(jTextFieldContact, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 170, 270, 20));
+        jPanel7.add(jTextFieldContact, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 250, 270, 20));
 
         jLabel10.setBackground(new java.awt.Color(0, 0, 51));
         jLabel10.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel10.setText("CONTACT*");
-        jPanel7.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 140, 150, 20));
-        jPanel7.add(jSeparator8, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 250, 270, -1));
+        jPanel7.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 220, 150, 20));
+        jPanel7.add(jSeparator8, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 270, 270, -1));
 
         jTextFieldAddress.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jTextFieldAddress.setForeground(new java.awt.Color(153, 153, 153));
-        jTextFieldAddress.setText("Enter Address..");
         jTextFieldAddress.setBorder(null);
         jTextFieldAddress.setDisabledTextColor(new java.awt.Color(204, 204, 204));
         jTextFieldAddress.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -151,31 +146,29 @@ public class DialogBox extends javax.swing.JDialog {
                 jTextFieldAddressKeyPressed(evt);
             }
         });
-        jPanel7.add(jTextFieldAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 230, 270, -1));
+        jPanel7.add(jTextFieldAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 250, 270, -1));
 
         jLabel11.setBackground(new java.awt.Color(0, 0, 51));
         jLabel11.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel11.setText("ADDRESS*");
-        jPanel7.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 200, 150, -1));
+        jPanel7.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 220, 150, -1));
 
         jLabel12.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel12.setText("USER TYPE*");
-        jPanel7.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, 400, -1));
+        jPanel7.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 30, 400, -1));
 
-        jComboBoxUserType2.setBackground(new java.awt.Color(0, 102, 255));
-        jComboBoxUserType2.setForeground(new java.awt.Color(255, 255, 255));
-        jComboBoxUserType2.addActionListener(new java.awt.event.ActionListener() {
+        jComboBoxUserTypes.setBackground(new java.awt.Color(0, 102, 255));
+        jComboBoxUserTypes.setForeground(new java.awt.Color(255, 255, 255));
+        jComboBoxUserTypes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBoxUserType2ActionPerformed(evt);
+                jComboBoxUserTypesActionPerformed(evt);
             }
         });
-        jPanel7.add(jComboBoxUserType2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, 560, -1));
-        jPanel7.add(jSeparator9, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, 560, -1));
-        jPanel7.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, 260, -1));
+        jPanel7.add(jComboBoxUserTypes, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 60, 560, -1));
+        jPanel7.add(jSeparator9, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 90, 560, -1));
+        jPanel7.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 150, 260, -1));
 
         jTextFieldUsername.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jTextFieldUsername.setForeground(new java.awt.Color(153, 153, 153));
-        jTextFieldUsername.setText("Enter Username...");
         jTextFieldUsername.setBorder(null);
         jTextFieldUsername.setDisabledTextColor(new java.awt.Color(204, 204, 204));
         jTextFieldUsername.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -193,17 +186,15 @@ public class DialogBox extends javax.swing.JDialog {
                 jTextFieldUsernameKeyPressed(evt);
             }
         });
-        jPanel7.add(jTextFieldUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, 260, 20));
+        jPanel7.add(jTextFieldUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 130, 260, 20));
 
         jLabel6.setBackground(new java.awt.Color(0, 0, 51));
         jLabel6.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel6.setText("USERNAME*");
-        jPanel7.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, 100, -1));
-        jPanel7.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, 260, -1));
+        jPanel7.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 100, 100, -1));
+        jPanel7.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 210, 260, -1));
 
         jTextFieldPassword.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jTextFieldPassword.setForeground(new java.awt.Color(153, 153, 153));
-        jTextFieldPassword.setText("Enter Password...");
         jTextFieldPassword.setBorder(null);
         jTextFieldPassword.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -220,17 +211,15 @@ public class DialogBox extends javax.swing.JDialog {
                 jTextFieldPasswordKeyPressed(evt);
             }
         });
-        jPanel7.add(jTextFieldPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 170, 260, -1));
+        jPanel7.add(jTextFieldPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 190, 260, -1));
 
         jLabel9.setBackground(new java.awt.Color(0, 0, 51));
         jLabel9.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel9.setText("PASSWORD*");
-        jPanel7.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, -1, 20));
-        jPanel7.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 250, 260, -1));
+        jPanel7.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 160, -1, 20));
+        jPanel7.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 210, 260, -1));
 
         jTextFieldRetypePassword.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jTextFieldRetypePassword.setForeground(new java.awt.Color(153, 153, 153));
-        jTextFieldRetypePassword.setText("Retype Password...");
         jTextFieldRetypePassword.setBorder(null);
         jTextFieldRetypePassword.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -247,17 +236,15 @@ public class DialogBox extends javax.swing.JDialog {
                 jTextFieldRetypePasswordKeyPressed(evt);
             }
         });
-        jPanel7.add(jTextFieldRetypePassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 230, 260, -1));
+        jPanel7.add(jTextFieldRetypePassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 190, 260, -1));
 
         jLabelRetype.setBackground(new java.awt.Color(0, 0, 51));
         jLabelRetype.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabelRetype.setText("RETYPE PASSWORD*");
-        jPanel7.add(jLabelRetype, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 200, 170, -1));
-        jPanel7.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 130, 270, -1));
+        jPanel7.add(jLabelRetype, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 160, 170, -1));
+        jPanel7.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 150, 270, -1));
 
         jTextFieldName.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jTextFieldName.setForeground(new java.awt.Color(153, 153, 153));
-        jTextFieldName.setText("Enter Name..");
         jTextFieldName.setBorder(null);
         jTextFieldName.setDisabledTextColor(new java.awt.Color(204, 204, 204));
         jTextFieldName.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -275,12 +262,12 @@ public class DialogBox extends javax.swing.JDialog {
                 jTextFieldNameKeyPressed(evt);
             }
         });
-        jPanel7.add(jTextFieldName, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 110, 270, 20));
+        jPanel7.add(jTextFieldName, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 130, 270, 20));
 
         jLabel8.setBackground(new java.awt.Color(0, 0, 51));
         jLabel8.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel8.setText("NAME*");
-        jPanel7.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 80, 60, -1));
+        jPanel7.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 100, 60, -1));
 
         jButtonSave.setBackground(new java.awt.Color(0, 102, 255));
         jButtonSave.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -306,31 +293,31 @@ public class DialogBox extends javax.swing.JDialog {
         });
         jPanel7.add(jButtonSave1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 560, 290, 70));
 
-        jButtonSave2.setBackground(new java.awt.Color(0, 102, 255));
-        jButtonSave2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jButtonSave2.setForeground(new java.awt.Color(255, 255, 255));
-        jButtonSave2.setText("Save");
-        jButtonSave2.setBorder(null);
-        jButtonSave2.addActionListener(new java.awt.event.ActionListener() {
+        jButtonSaveUser.setBackground(new java.awt.Color(0, 102, 255));
+        jButtonSaveUser.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jButtonSaveUser.setForeground(new java.awt.Color(255, 255, 255));
+        jButtonSaveUser.setText("Save");
+        jButtonSaveUser.setBorder(null);
+        jButtonSaveUser.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonSave2ActionPerformed(evt);
+                jButtonSaveUserActionPerformed(evt);
             }
         });
-        jPanel7.add(jButtonSave2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 260, 170, 30));
+        jPanel7.add(jButtonSaveUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 280, 170, 30));
 
         jButtonClear.setBackground(new java.awt.Color(0, 102, 255));
         jButtonClear.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButtonClear.setForeground(new java.awt.Color(255, 255, 255));
-        jButtonClear.setText("Clear");
+        jButtonClear.setText("Cancel");
         jButtonClear.setBorder(null);
         jButtonClear.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonClearActionPerformed(evt);
             }
         });
-        jPanel7.add(jButtonClear, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 260, 180, 30));
+        jPanel7.add(jButtonClear, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 280, 180, 30));
 
-        getContentPane().add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 610, 310));
+        getContentPane().add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 700, 330));
 
         jLabelExit.setBackground(new java.awt.Color(0, 102, 255));
         jLabelExit.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
@@ -350,7 +337,7 @@ public class DialogBox extends javax.swing.JDialog {
                 jLabelExitMouseExited(evt);
             }
         });
-        getContentPane().add(jLabelExit, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 0, 50, 40));
+        getContentPane().add(jLabelExit, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 0, 50, 40));
 
         jLabelHeaderRow.setBackground(new java.awt.Color(0, 102, 255));
         jLabelHeaderRow.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -359,7 +346,7 @@ public class DialogBox extends javax.swing.JDialog {
         jLabelHeaderRow.setText("User");
         jLabelHeaderRow.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 1, true));
         jLabelHeaderRow.setOpaque(true);
-        getContentPane().add(jLabelHeaderRow, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 610, 40));
+        getContentPane().add(jLabelHeaderRow, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, 40));
 
         pack();
         setLocationRelativeTo(null);
@@ -385,12 +372,7 @@ public class DialogBox extends javax.swing.JDialog {
     }//GEN-LAST:event_jComboBoxUserTypeActionPerformed
 
     private void jTextFieldAddressKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldAddressKeyPressed
-        // TODO add your handling code here:
-        if (this.jTextFieldAddress.getText().equalsIgnoreCase("Enter Address..")) {
-            this.jTextFieldAddress.setText("");
-            this.jTextFieldAddress.setForeground(Color.black);
 
-        }
     }//GEN-LAST:event_jTextFieldAddressKeyPressed
 
     private void jTextFieldAddressActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldAddressActionPerformed
@@ -400,20 +382,12 @@ public class DialogBox extends javax.swing.JDialog {
     private void jTextFieldAddressMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextFieldAddressMouseClicked
         // TODO add your handling code here:
 
-        if (this.jTextFieldAddress.getText().equalsIgnoreCase("Enter Address..")) {
-            this.jTextFieldAddress.setText("");
-            this.jTextFieldAddress.setForeground(Color.black);
 
-        }
     }//GEN-LAST:event_jTextFieldAddressMouseClicked
 
     private void jTextFieldContactKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldContactKeyPressed
         // TODO add your handling code here:
-        if (this.jTextFieldContact.getText().equalsIgnoreCase("Enter Contact...")) {
-            this.jTextFieldContact.setText("");
-            this.jTextFieldContact.setForeground(Color.black);
 
-        }
     }//GEN-LAST:event_jTextFieldContactKeyPressed
 
     private void jTextFieldContactActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldContactActionPerformed
@@ -423,24 +397,16 @@ public class DialogBox extends javax.swing.JDialog {
     private void jTextFieldContactMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextFieldContactMouseClicked
         // TODO add your handling code here:
 
-        if (this.jTextFieldContact.getText().equalsIgnoreCase("Enter Contact...")) {
-            this.jTextFieldContact.setText("");
-            this.jTextFieldContact.setForeground(Color.black);
-
-        }
     }//GEN-LAST:event_jTextFieldContactMouseClicked
 
-    private void jComboBoxUserType2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxUserType2ActionPerformed
+    private void jComboBoxUserTypesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxUserTypesActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBoxUserType2ActionPerformed
+    }//GEN-LAST:event_jComboBoxUserTypesActionPerformed
 
     private void jTextFieldUsernameMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextFieldUsernameMouseClicked
         // TODO add your handling code here:
 
-        if (this.jTextFieldUsername.getText().equalsIgnoreCase("Enter Username...")) {
-            this.jTextFieldUsername.setText("");
-            this.jTextFieldUsername.setForeground(Color.BLACK);
-        }
+
     }//GEN-LAST:event_jTextFieldUsernameMouseClicked
 
     private void jTextFieldUsernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldUsernameActionPerformed
@@ -449,19 +415,11 @@ public class DialogBox extends javax.swing.JDialog {
 
     private void jTextFieldUsernameKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldUsernameKeyPressed
         // TODO add your handling code here:
-        if (this.jTextFieldUsername.getText().equalsIgnoreCase("Enter Username...")) {
-            this.jTextFieldUsername.setText("");
-            this.jTextFieldUsername.setForeground(Color.black);
 
-        }
     }//GEN-LAST:event_jTextFieldUsernameKeyPressed
 
     private void jTextFieldPasswordMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextFieldPasswordMouseClicked
-        if (this.jTextFieldPassword.getText().equalsIgnoreCase("Enter Password...")) {
-            this.jTextFieldPassword.setText("");
-            this.jTextFieldPassword.setForeground(Color.black);
 
-        }
     }//GEN-LAST:event_jTextFieldPasswordMouseClicked
 
     private void jTextFieldPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldPasswordActionPerformed
@@ -469,19 +427,12 @@ public class DialogBox extends javax.swing.JDialog {
     }//GEN-LAST:event_jTextFieldPasswordActionPerformed
 
     private void jTextFieldPasswordKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldPasswordKeyPressed
-        if (this.jTextFieldPassword.getText().equalsIgnoreCase("Enter Password...")) {
-            this.jTextFieldPassword.setText("");
-            this.jTextFieldPassword.setForeground(Color.black);
-        }
+
     }//GEN-LAST:event_jTextFieldPasswordKeyPressed
 
     private void jTextFieldRetypePasswordMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextFieldRetypePasswordMouseClicked
         // TODO add your handling code here:
-        if (this.jTextFieldRetypePassword.getText().equalsIgnoreCase("Retype Password...")) {
-            this.jTextFieldRetypePassword.setText("");
-            this.jTextFieldRetypePassword.setForeground(Color.black);
 
-        }
     }//GEN-LAST:event_jTextFieldRetypePasswordMouseClicked
 
     private void jTextFieldRetypePasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldRetypePasswordActionPerformed
@@ -490,20 +441,12 @@ public class DialogBox extends javax.swing.JDialog {
 
     private void jTextFieldRetypePasswordKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldRetypePasswordKeyPressed
         // TODO add your handling code here:
-        if (this.jTextFieldRetypePassword.getText().equalsIgnoreCase("Retype Password...")) {
-            this.jTextFieldRetypePassword.setText("");
-            this.jTextFieldRetypePassword.setForeground(Color.black);
 
-        }
     }//GEN-LAST:event_jTextFieldRetypePasswordKeyPressed
 
     private void jTextFieldNameMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextFieldNameMouseClicked
         // TODO add your handling code here:
-        if (this.jTextFieldName.getText().equalsIgnoreCase("Enter Name..")) {
-            this.jTextFieldName.setText("");
-            this.jTextFieldName.setForeground(Color.black);
 
-        }
     }//GEN-LAST:event_jTextFieldNameMouseClicked
 
     private void jTextFieldNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldNameActionPerformed
@@ -512,142 +455,21 @@ public class DialogBox extends javax.swing.JDialog {
 
     private void jTextFieldNameKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldNameKeyPressed
         // TODO add your handling code here:
-        if (this.jTextFieldName.getText().equalsIgnoreCase("Enter Name..")) {
-            this.jTextFieldName.setText("");
-            this.jTextFieldName.setForeground(Color.black);
 
-        }
     }//GEN-LAST:event_jTextFieldNameKeyPressed
 
     private void jButtonSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSaveActionPerformed
 
-        int user_type_id = user_types_list.get(this.jComboBoxUserType.getSelectedIndex()).getUser_type_id();
 
-        String username = this.jTextFieldUsername.getText();
-        String password = this.jTextFieldPassword.getText();
-        String reTypePassword = this.jTextFieldRetypePassword.getText();
-        String name = this.jTextFieldName.getText();
-        String contact = this.jTextFieldContact.getText();
-        String address = this.jTextFieldAddress.getText();
-
-        if (!(username.equalsIgnoreCase("Enter Username...") || password.equalsIgnoreCase("Enter Password...")
-                || reTypePassword.equalsIgnoreCase("Retype Password...")
-                || name.equalsIgnoreCase("Enter Name..") || username.equalsIgnoreCase("") || password.equalsIgnoreCase("")
-                || reTypePassword.equalsIgnoreCase("")
-                || name.equalsIgnoreCase("") || name.equalsIgnoreCase("") || contact.equals("Enter Contact...") || contact.equals("") || address.equals("Enter Address..") || address.equals(""))) {
-
-            if (reTypePassword.equals(password)) {
-                if (contact.matches("^[0][1-9]\\d{9}$|^[1-9]\\d{9}$")) {
-                    int status = dbManager.insertUser(
-                            new User(0, user_type_id, this.jTextFieldUsername.getText(), this.jTextFieldPassword.getText(),
-                                    this.jTextFieldName.getText(),
-                                    address, contact, 1));
-
-                    if (status != 0) {
-
-                        this.jTextFieldUsername.setText("Enter Username...");
-                        this.jTextFieldPassword.setText("Enter Password...");
-                        this.jTextFieldRetypePassword.setText("Retype Password...");
-                        this.jTextFieldContact.setText("Enter Contact..");
-                        this.jTextFieldAddress.setText("Enter Address...");
-                        this.jTextFieldName.setText("Enter Name..");
-                        this.jComboBoxUserType.setSelectedIndex(0);
-
-                        this.jLabelRetype.setForeground(Color.gray);
-                        this.jTextFieldUsername.setForeground(Color.gray);
-                        this.jTextFieldPassword.setForeground(Color.gray);
-                        this.jTextFieldRetypePassword.setForeground(Color.gray);
-                        this.jTextFieldContact.setForeground(Color.gray);
-                        this.jTextFieldAddress.setForeground(Color.gray);
-                        this.jTextFieldName.setForeground(Color.gray);
-
-                    }
-                } else {
-                    new playAudio().playErrorSound();
-
-                    JOptionPane.showMessageDialog(this, "Invalid phone number", "Error", JOptionPane.ERROR_MESSAGE);
-
-                }
-            } else {
-                new playAudio().playErrorSound();
-                this.jLabelRetype.setForeground(Color.red);
-                JOptionPane.showMessageDialog(this, "Password not match", "Error", JOptionPane.ERROR_MESSAGE);
-
-            }
-        } else {
-            new playAudio().playErrorSound();
-
-            JOptionPane.showMessageDialog(this, "Please fill required field", "Error", JOptionPane.ERROR_MESSAGE);
-
-        }
     }//GEN-LAST:event_jButtonSaveActionPerformed
 
     private void jButtonSave1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSave1ActionPerformed
 
-        int user_type_id = user_types_list.get(this.jComboBoxUserType.getSelectedIndex()).getUser_type_id();
 
-        String username = this.jTextFieldUsername.getText();
-        String password = this.jTextFieldPassword.getText();
-        String reTypePassword = this.jTextFieldRetypePassword.getText();
-        String name = this.jTextFieldName.getText();
-        String contact = this.jTextFieldContact.getText();
-        String address = this.jTextFieldAddress.getText();
-
-        if (!(username.equalsIgnoreCase("Enter Username...") || password.equalsIgnoreCase("Enter Password...")
-                || reTypePassword.equalsIgnoreCase("Retype Password...")
-                || name.equalsIgnoreCase("Enter Name..") || username.equalsIgnoreCase("") || password.equalsIgnoreCase("")
-                || reTypePassword.equalsIgnoreCase("")
-                || name.equalsIgnoreCase("") || name.equalsIgnoreCase("") || contact.equals("Enter Contact...") || contact.equals("") || address.equals("Enter Address..") || address.equals(""))) {
-
-            if (reTypePassword.equals(password)) {
-                if (contact.matches("^[0][1-9]\\d{9}$|^[1-9]\\d{9}$")) {
-                    int status = dbManager.insertUser(
-                            new User(0, user_type_id, this.jTextFieldUsername.getText(), this.jTextFieldPassword.getText(),
-                                    this.jTextFieldName.getText(),
-                                    address, contact, 1));
-
-                    if (status != 0) {
-                        JOptionPane.showMessageDialog(this, "Successfully added");
-                        this.jTextFieldUsername.setText("Enter Username...");
-                        this.jTextFieldPassword.setText("Enter Password...");
-                        this.jTextFieldRetypePassword.setText("Retype Password...");
-                        this.jTextFieldContact.setText("Enter Contact..");
-                        this.jTextFieldAddress.setText("Enter Address...");
-                        this.jTextFieldName.setText("Enter Name..");
-                        this.jComboBoxUserType.setSelectedIndex(0);
-
-                        this.jLabelRetype.setForeground(Color.gray);
-                        this.jTextFieldUsername.setForeground(Color.gray);
-                        this.jTextFieldPassword.setForeground(Color.gray);
-                        this.jTextFieldRetypePassword.setForeground(Color.gray);
-                        this.jTextFieldContact.setForeground(Color.gray);
-                        this.jTextFieldAddress.setForeground(Color.gray);
-                        this.jTextFieldName.setForeground(Color.gray);
-
-                    }
-                } else {
-                    new playAudio().playErrorSound();
-
-                    JOptionPane.showMessageDialog(this, "Invalid phone number", "Error", JOptionPane.ERROR_MESSAGE);
-
-                }
-            } else {
-                new playAudio().playErrorSound();
-                this.jLabelRetype.setForeground(Color.red);
-                JOptionPane.showMessageDialog(this, "Password not match", "Error", JOptionPane.ERROR_MESSAGE);
-
-            }
-        } else {
-            new playAudio().playErrorSound();
-
-            JOptionPane.showMessageDialog(this, "Please fill required field", "Error", JOptionPane.ERROR_MESSAGE);
-
-        }
     }//GEN-LAST:event_jButtonSave1ActionPerformed
 
-    private void jButtonSave2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSave2ActionPerformed
-
-        int user_type_id = user_types_list.get(this.jComboBoxUserType.getSelectedIndex()).getUser_type_id();
+    private void jButtonSaveUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSaveUserActionPerformed
+        int user_type_id = user_types_list.get(this.jComboBoxUserTypes.getSelectedIndex()).getUser_type_id();
 
         String username = this.jTextFieldUsername.getText();
         String password = this.jTextFieldPassword.getText();
@@ -656,11 +478,10 @@ public class DialogBox extends javax.swing.JDialog {
         String contact = this.jTextFieldContact.getText();
         String address = this.jTextFieldAddress.getText();
 
-        if (!(username.equalsIgnoreCase("Enter Username...") || password.equalsIgnoreCase("Enter Password...")
-                || reTypePassword.equalsIgnoreCase("Retype Password...")
-                || name.equalsIgnoreCase("Enter Name..") || username.equalsIgnoreCase("") || password.equalsIgnoreCase("")
+        if (!(username.equalsIgnoreCase("") || password.equalsIgnoreCase("")
                 || reTypePassword.equalsIgnoreCase("")
-                || name.equalsIgnoreCase("") || name.equalsIgnoreCase("") || contact.equals("Enter Contact...") || contact.equals("") || address.equals("Enter Address..") || address.equals(""))) {
+                || name.equalsIgnoreCase("") || name.equalsIgnoreCase("")
+                || contact.equals("") || address.equals(""))) {
 
             if (reTypePassword.equals(password)) {
                 if (contact.matches("^[0][1-9]\\d{9}$|^[1-9]\\d{9}$")) {
@@ -670,22 +491,10 @@ public class DialogBox extends javax.swing.JDialog {
                                     address, contact, 1));
 
                     if (status != 0) {
-                        JOptionPane.showMessageDialog(this, "Successfully added");
-                        this.jTextFieldUsername.setText("Enter Username...");
-                        this.jTextFieldPassword.setText("Enter Password...");
-                        this.jTextFieldRetypePassword.setText("Retype Password...");
-                        this.jTextFieldContact.setText("Enter Contact..");
-                        this.jTextFieldAddress.setText("Enter Address...");
-                        this.jTextFieldName.setText("Enter Name..");
-                        this.jComboBoxUserType.setSelectedIndex(0);
 
-                        this.jLabelRetype.setForeground(Color.gray);
-                        this.jTextFieldUsername.setForeground(Color.gray);
-                        this.jTextFieldPassword.setForeground(Color.gray);
-                        this.jTextFieldRetypePassword.setForeground(Color.gray);
-                        this.jTextFieldContact.setForeground(Color.gray);
-                        this.jTextFieldAddress.setForeground(Color.gray);
-                        this.jTextFieldName.setForeground(Color.gray);
+                        this.jComboBoxUserTypes.setSelectedIndex(0);
+                        this.dispose();
+                        
 
                     }
                 } else {
@@ -706,7 +515,8 @@ public class DialogBox extends javax.swing.JDialog {
             JOptionPane.showMessageDialog(this, "Please fill required field", "Error", JOptionPane.ERROR_MESSAGE);
 
         }
-    }//GEN-LAST:event_jButtonSave2ActionPerformed
+
+    }//GEN-LAST:event_jButtonSaveUserActionPerformed
 
     private void jButtonClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonClearActionPerformed
         this.dispose();
@@ -758,7 +568,7 @@ public class DialogBox extends javax.swing.JDialog {
         user_types_list = dbManager.getAllUsersType();
         for (UserType userType : user_types_list) {
 
-            this.jComboBoxUserType.addItem("" + userType.getUser_type());
+            this.jComboBoxUserTypes.addItem("" + userType.getUser_type());
 
         }
     }
@@ -767,9 +577,9 @@ public class DialogBox extends javax.swing.JDialog {
     private javax.swing.JButton jButtonClear;
     private javax.swing.JButton jButtonSave;
     private javax.swing.JButton jButtonSave1;
-    private javax.swing.JButton jButtonSave2;
+    private javax.swing.JButton jButtonSaveUser;
     private javax.swing.JComboBox<String> jComboBoxUserType;
-    private javax.swing.JComboBox<String> jComboBoxUserType2;
+    private javax.swing.JComboBox<String> jComboBoxUserTypes;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;

@@ -62,7 +62,7 @@ public class UserInternalFrame extends javax.swing.JInternalFrame {
         jTableUser = new javax.swing.JTable();
         jButtonViewUser6 = new javax.swing.JButton();
         jButtonViewUser7 = new javax.swing.JButton();
-        jButtonViewUser8 = new javax.swing.JButton();
+        jButtonViewUser = new javax.swing.JButton();
         jButtonViewUser9 = new javax.swing.JButton();
 
         setClosable(true);
@@ -127,16 +127,16 @@ public class UserInternalFrame extends javax.swing.JInternalFrame {
         });
         getContentPane().add(jButtonViewUser7, new org.netbeans.lib.awtextra.AbsoluteConstraints(767, 564, 220, 50));
 
-        jButtonViewUser8.setBackground(new java.awt.Color(255, 255, 255));
-        jButtonViewUser8.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jButtonViewUser8.setForeground(new java.awt.Color(0, 102, 255));
-        jButtonViewUser8.setText("View User");
-        jButtonViewUser8.addActionListener(new java.awt.event.ActionListener() {
+        jButtonViewUser.setBackground(new java.awt.Color(255, 255, 255));
+        jButtonViewUser.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jButtonViewUser.setForeground(new java.awt.Color(0, 102, 255));
+        jButtonViewUser.setText("View User");
+        jButtonViewUser.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonViewUser8ActionPerformed(evt);
+                jButtonViewUserActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonViewUser8, new org.netbeans.lib.awtextra.AbsoluteConstraints(307, 564, 220, 50));
+        getContentPane().add(jButtonViewUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(307, 564, 220, 50));
 
         jButtonViewUser9.setBackground(new java.awt.Color(255, 255, 255));
         jButtonViewUser9.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -168,9 +168,9 @@ public class UserInternalFrame extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButtonViewUser7ActionPerformed
 
-    private void jButtonViewUser8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonViewUser8ActionPerformed
+    private void jButtonViewUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonViewUserActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButtonViewUser8ActionPerformed
+    }//GEN-LAST:event_jButtonViewUserActionPerformed
 
     private void jButtonViewUser9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonViewUser9ActionPerformed
         // TODO add your handling code here:
@@ -192,9 +192,9 @@ public class UserInternalFrame extends javax.swing.JInternalFrame {
         }
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButtonViewUser;
     private javax.swing.JButton jButtonViewUser6;
     private javax.swing.JButton jButtonViewUser7;
-    private javax.swing.JButton jButtonViewUser8;
     private javax.swing.JButton jButtonViewUser9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTableUser;
