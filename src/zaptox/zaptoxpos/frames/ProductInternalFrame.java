@@ -9,13 +9,33 @@ package zaptox.zaptoxpos.frames;
  *
  * @author Vksoni
  */
+import java.awt.Color;
+import java.awt.Font;
+import java.util.ArrayList;
+import java.util.Vector;
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.table.JTableHeader;
+import zaptox.zaptoxpos.beans.User;
+import zaptox.zaptoxpos.beans.UserType;
+import zaptox.zaptoxpos.dao.DbManager;
+import zaptox.zaptoxpos.dao.DbManagerInterface;
 public class ProductInternalFrame extends javax.swing.JInternalFrame {
 
     /**
      * Creates new form UserInternalFrame
      */
+    DbManager dbManager;
     public ProductInternalFrame() {
         initComponents();
+          JTableHeader header = this.jTableUser.getTableHeader();
+        header.setBackground(new Color(0, 102, 255));
+        header.setForeground(new Color(255, 255, 255));
+        header.setFont(new Font("SansSerif", Font.BOLD, 16));
+
+         dbManager = new DbManager();
+       
+       
     }
 
     /**
@@ -27,23 +47,70 @@ public class ProductInternalFrame extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTableUser = new javax.swing.JTable();
+
         setClosable(true);
+
+        jTableUser.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jTableUser.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Barcode", "Category", "UOM", "Name", "ReaderLevel", "Buy Price", "Sell Price", "Description", "Created"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, true, true, true, true, true
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jTableUser.setToolTipText("Products");
+        jTableUser.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jTableUser.setGridColor(new java.awt.Color(0, 102, 255));
+        jTableUser.setSelectionBackground(new java.awt.Color(0, 102, 255));
+        jTableUser.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTableUserMouseClicked(evt);
+            }
+        });
+        jScrollPane1.setViewportView(jTableUser);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1093, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1093, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 625, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 566, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 63, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jTableUserMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableUserMouseClicked
+        // TODO add your handling code here:
+
+    }//GEN-LAST:event_jTableUserMouseClicked
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable jTableUser;
     // End of variables declaration//GEN-END:variables
 }
